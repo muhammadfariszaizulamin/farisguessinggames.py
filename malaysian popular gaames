@@ -1,0 +1,52 @@
+def guessing_game():
+    print("Welcome to the Malaysian Games Guessing Game!")
+    print("Try to guess the popular Malaysian game based on the hints provided.")
+    print("You have 3 attempts for each game. Good luck!\n")
+
+    games = {
+        "Congkak": [
+            "Hint 1: This game is played on a wooden board with seven holes on each side and two larger holes at both ends.",
+            "Hint 2: The game involves moving marbles or seeds around the board.",
+            "Hint 3: It is a traditional mancala game popular in Malaysia and other Southeast Asian countries."
+        ],
+        "Sepak Takraw": [
+            "Hint 1: This game is played with a rattan ball.",
+            "Hint 2: It is similar to volleyball, but players use their feet, head, knees, and chest instead of hands.",
+            "Hint 3: It is a popular sport in Malaysia and other Southeast Asian countries, often played in teams of three."
+        ],
+        "Gasing": [
+            "Hint 1: This game involves spinning a top.",
+            "Hint 2: It is a traditional game where the top is spun using a string.",
+            "Hint 3: The game is often played in rural areas and during cultural festivals in Malaysia."
+        ],
+        "Wau": [
+            "Hint 1: This game involves flying a kite.",
+            "Hint 2: It is a traditional Malaysian kite that comes in various shapes and sizes.",
+            "Hint 3: The game is often played during the harvest season, and the kites are decorated with intricate designs."
+        ],
+        "Batu Seremban": [
+            "Hint 1: This game is played with small stones or objects.",
+            "Hint 2: It involves tossing and catching the stones in various patterns.",
+            "Hint 3: The game is typically played by children and is known for improving hand-eye coordination."
+        ]
+    }
+
+    for game, hints in games.items():
+        print("\nGuess the game!")
+        attempts = 3
+
+        for attempt in range(attempts):
+            print(hints[attempt])
+            guess = input("Your guess: ")
+
+            if guess.lower() == game.lower():
+                print("Congratulations! You guessed it right.")
+                break
+            else:
+                print("Incorrect guess. Try again.\n")
+
+        if guess.lower() != game.lower():
+            print(f"Sorry, you've used all your attempts. The correct answer was '{game}'.")
+
+# Run the guessing game
+guessing_game()
